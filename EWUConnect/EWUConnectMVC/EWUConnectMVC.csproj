@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EWUConnect.Data\EWUConnect.Data.csproj" />
+    <ProjectReference Include="..\EWUConnect.Service\EWUConnect.Service.csproj" />
   </ItemGroup>
 
 </Project>

@@ -14,6 +14,9 @@ using EWUConnectMVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using EWUConnect.Data.Models;
+using EWUConnectMVC.Services;
+using EWUConnect.Data;
+using EWUConnect.Service;
 
 namespace EWUConnectMVC
 {
@@ -42,6 +45,9 @@ namespace EWUConnectMVC
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+			services.AddTransient<IEmailSender, EmailSender>();
+			services.AddScoped<IForum, ForumService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
