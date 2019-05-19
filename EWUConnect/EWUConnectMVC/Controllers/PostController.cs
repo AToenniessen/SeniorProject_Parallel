@@ -15,6 +15,7 @@ namespace EWUConnectMVC.Controllers
 		private readonly IPost post_Service;
 		public PostController(IPost postService)
 		{
+			post_Service = postService;
 		}
 
 		public IActionResult Index(int id)

@@ -1,27 +1,26 @@
 @using Microsoft.AspNetCore.Identity
 @using EWUConnect.Data.Models
+
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-<ul class="navbar-nav">
-	@if (SignInManager.IsSignedIn(User))
-	{
-		<li class="nav-item">
-			<a class="nav-link text-dark" asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @User.Identity.Name!</a>
-		</li>
-		<li class="nav-item">
-			<form class="form-inline" asp-area="" asp-controller="Account" asp-action="SignedOut" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-				<button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-			</form>
-		</li>
-	}
-	else
-	{
-		<li class="nav-item">
-			<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-		</li>
-	}
-</ul>
+@if (SignInManager.IsSignedIn(User))
+{
+	<form asp-area="" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+			</li>
+			<li>
+				<button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
+			</li>
+		</ul>
+	</form>
+}
+else
+{
+	<ul class="nav navbar-nav navbar-right">
+		<li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+		<li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+	</ul>
+}
