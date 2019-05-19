@@ -1,6 +1,7 @@
 ﻿using EWUConnect.Data;
 using EWUConnect.Data.Models;
 using EWUConnectMVC.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +45,11 @@ namespace EWUConnect.Service
 
 		public Post GetById(int id)
 		{
-			throw new NotImplementedException();
+			return dbContext.Posts.Where(post => post.Id == id)
+				.Include(post => post.User)
+				.Include(post => post.Replies).ThenInclude(reply => reply.User)
+				.Include(post => post.Forum)
+				.First();
 		}
 
 		public IEnumerable<Post> GetFilteredPosts(string searchQuery)
