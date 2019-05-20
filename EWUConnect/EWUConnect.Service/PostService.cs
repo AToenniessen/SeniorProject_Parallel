@@ -18,9 +18,10 @@ namespace EWUConnect.Service
 			dbContext = context;
 		}
 
-		public Task Add(Post post)
+		public async Task Add(Post post)
 		{
-			throw new NotImplementedException();
+			dbContext.Add(post);
+			await dbContext.SaveChangesAsync();
 		}
 
 		public Task AddReply(PostReply reply)

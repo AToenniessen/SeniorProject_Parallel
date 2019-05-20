@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewData["Title"] = "Mentor";
+    Layout = "~/Views/Home/MasterLayout.cshtml";
+}
+
+	<asp:Content ID="Content2" ContentPlaceHolderID="LandingPage" runat="server">
+		<link href="css/contact.css" rel="stylesheet" type="text/css" />
+
+
+
+		<div class="container1">
+			<div class="bootstrapGrid">
+
+				<div class="row">
+					<div class="col-sm-12">
+						<h1>Become a Mentor</h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<asp:RequiredFieldValidator ID="RequiredFirstName" runat="server"
+													ControlToValidate="FirstName" ValidationGroup="mentor" />
+
+						<asp:TextBox ID="FirstName" Placeholder="First Name" runat="server" Width="100%" />
+					</div>
+					<div class="col-sm-6">
+						<asp:RequiredFieldValidator ID="RequiredLastName" runat="server"
+													ControlToValidate="LastName" ValidationGroup="mentor" />
+
+						<asp:TextBox ID="LastName" Placeholder="Last Name" runat="server" Width="100%" />
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<asp:RequiredFieldValidator ID="RequiredEmail" runat="server"
+													ControlToValidate="Email" ValidationGroup="mentor" />
+
+						<asp:RegularExpressionValidator runat="server" ID="ExpressionValidatorEmail"
+														SetFocusOnError="true" ControlToValidate="Email"
+														ValidationExpression="\w+([-+.']\w+)*@@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
+														ValidationGroup="comment" />
+
+						<asp:TextBox ID="Email" Placeholder="Email" runat="server" Width="100%" />
+					</div>
+					<div class="col-sm-2">
+						<asp:TextBox ID="areaCode" Placeholder="(509)" runat="server" Width="100%" />
+					</div>
+					<div class="col-sm-2">
+						<asp:TextBox ID="firstPhone" Placeholder="555" runat="server" Width="100%" />
+					</div>
+					<div class="col-sm-2">
+						<asp:TextBox ID="lastPhone" Placeholder="5555" runat="server" Width="100%" />
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+													ControlToValidate="company" ValidationGroup="mentor" />
+
+						<asp:TextBox ID="company" Placeholder="University / Company" runat="server" Width="100%" />
+					</div>
+					<div class="col-sm-3">
+						<asp:TextBox ID="major" Placeholder="Major" runat="server" Width="100%" />
+					</div>
+					<div class="col-sm-3">
+						<asp:TextBox ID="year" Placeholder="Graduation Year" runat="server" Width="100%" />
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<asp:RequiredFieldValidator ID="RequiredComment" runat="server"
+													ControlToValidate="Comments" ValidationGroup="mentor" />
+
+						<asp:TextBox ID="Comments" Placeholder="Message" runat="server"
+									 TextMode="MultiLine" Rows="10" Width="100%"
+									 ValidationExpression=".{10,}" />
+					</div>
+				</div>
+				<div class="col-sm-6">
+				</div>
+				<div class="col-sm-6">
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="alert alert-success alert-dismissible collapse" runat="server" id="AlertSuccess">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+							<strong>Sent!</strong> Thank you. We will get back to you shortly.
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<asp:Button runat="server" ID="btnSubmit" class="btn btn-primary btn-lg" Text="Submit" OnClick="BtnSubmit_Click" ValidationGroup="mentor" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</asp:Content>
+

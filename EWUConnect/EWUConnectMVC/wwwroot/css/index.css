@@ -1,0 +1,10 @@
+﻿body {
+    background-image: url("../images/Large_Mentor3_DEMO.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.bootstrapGrid {
+    margin-top: 20%;
+}
