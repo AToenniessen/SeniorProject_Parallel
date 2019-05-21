@@ -1,0 +1,30 @@
+@using Microsoft.AspNetCore.Identity
+@using EWUConnect.Data.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+	<form asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
+		<ul class="nav navbar-nav navbar-right">
+			<li class="nav-item">
+				<a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage" class="nav-link">Hello @UserManager.GetUserName(User)!</a>
+			</li>
+			<li class="nav-item">
+				<button type="submit" class="btn btn-link navbar-btn nav-link">Logout</button>
+			</li>
+		</ul>
+	</form>
+}
+else
+{
+	<ul class="nav navbar-nav navbar-right">
+		<li class="nav-item">
+			<a asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
+		</li>
+		<li class="nav-item">
+			<a asp-controller="Account" asp-action="Login" class="nav-link">Login</a>
+		</li>
+	</ul>
+}

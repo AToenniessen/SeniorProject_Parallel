@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EwuConnect.MVC", "EwuConnect.MVC\EwuConnect.MVC.csproj", "{D1E63145-ED64-4D12-AEE1-40DF63207960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EwuConnect.Domain", "EwuConnect.Domain\EwuConnect.Domain.csproj", "{BBE885AE-000A-4315-B64F-19BD9AA44670}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1E63145-ED64-4D12-AEE1-40DF63207960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E63145-ED64-4D12-AEE1-40DF63207960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E63145-ED64-4D12-AEE1-40DF63207960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E63145-ED64-4D12-AEE1-40DF63207960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE885AE-000A-4315-B64F-19BD9AA44670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE885AE-000A-4315-B64F-19BD9AA44670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE885AE-000A-4315-B64F-19BD9AA44670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE885AE-000A-4315-B64F-19BD9AA44670}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C0445BE-B300-4740-B7FE-23117A40BC08}
+	EndGlobalSection
+EndGlobal
