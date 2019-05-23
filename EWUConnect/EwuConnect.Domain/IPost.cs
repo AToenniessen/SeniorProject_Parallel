@@ -1,10 +1,10 @@
-﻿using EWUConnect.Data.Models;
+﻿using EwuConnect.Domain.Models.Posts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EWUConnect.Data
+namespace EwuConnect.Domain
 {
 	public interface IPost
 	{

@@ -10,9 +10,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using EWUConnect.Data.Models;
-using EWUConnect.Data.Models.ManageViewModels;
-using EWUConnectMVC.Services;
+
+using EwuConnect.Domain.Models;
+using EwuConnect.Domain.Services;
+using EwuConnect.Domain.Models.ManageViewModels;
 
 namespace EWUConnectMVC.Controllers
 {

@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using EWUConnectMVC.Models;
+using EwuConnect.Domain.Models;
 
-namespace EWUConnectMVC.Controllers
+namespace EwuConnect.MVC.Controllers
 {
 	public class HomeController : Controller
 	{
@@ -29,6 +29,12 @@ namespace EWUConnectMVC.Controllers
 			return View();
 		}
 
+		public IActionResult Privacy()
+		{
+			return View();
+		}
+
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

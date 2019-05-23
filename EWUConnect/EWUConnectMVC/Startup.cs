@@ -10,15 +10,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using EWUConnectMVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using EWUConnect.Data.Models;
-using EWUConnectMVC.Services;
-using EWUConnect.Data;
-using EWUConnect.Service;
+using EwuConnect.Domain.Models;
+using EwuConnect.Domain.Services;
+using EwuConnect.Domain;
 
-namespace EWUConnectMVC
+namespace EwuConnect.MVC
 {
     public class Startup
     {
@@ -39,22 +37,21 @@ namespace EWUConnectMVC
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+			services.AddDbContext<ApplicationDbContext>(options =>
+				options.UseSqlServer(
+					Configuration.GetConnectionString("DefaultConnection")));
+			services.AddDefaultIdentity<IdentityUser>()
+				.AddEntityFrameworkStores<ApplicationDbContext>();
 
-			services.AddTransient<IEmailSender, EmailSender>();
 			services.AddScoped<IForum, ForumService>();
 			services.AddScoped<IPost, PostService>();
+			services.AddScoped<IContact, ContactService>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-        }
+			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+		}
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {

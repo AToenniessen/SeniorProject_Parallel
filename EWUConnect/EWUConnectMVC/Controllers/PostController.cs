@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EWUConnect.Data;
-using EWUConnect.Data.Models;
-using EWUConnectMVC.Models.Post;
-using EWUConnectMVC.Models.Reply;
+using EwuConnect.Domain;
+using EwuConnect.Domain.Models;
+using EwuConnect.Domain.Models.Posts;
+using EwuConnect.Domain.Models.Posts.ViewModels;
+using EwuConnect.Domain.Models.Replies.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EWUConnectMVC.Controllers
+namespace EwuConnect.MVC.Controllers
 {
 	public class PostController : Controller
 	{

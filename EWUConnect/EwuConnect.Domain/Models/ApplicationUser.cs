@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 
-namespace EWUConnect.Domain.Models
+namespace EwuConnect.Domain.Models
 {
     public class ApplicationUser : IdentityUser
     {

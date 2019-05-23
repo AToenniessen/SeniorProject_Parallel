@@ -3,15 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EWUConnectMVC", "EWUConnectMVC\EWUConnectMVC.csproj", "{2135D503-81EF-443B-81CA-7647232450AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EwuConnect.MVC", "EWUConnectMVC\EwuConnect.MVC.csproj", "{2135D503-81EF-443B-81CA-7647232450AF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EWUConnect.Data", "EWUConnect.Data\EWUConnect.Data.csproj", "{35373716-8C99-4C8F-B295-986ACF9A7D4B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EWUConnect.Service", "EWUConnect.Service\EWUConnect.Service.csproj", "{D0DDF286-F18A-4964-B21A-84097CEDEBB0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWUConnect.Bridge", "EWUConnect.Bridge\EWUConnect.Bridge.csproj", "{46C37FBA-E725-436F-A7F7-EC7AE88B4420}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EwuConnect.Domain", "EwuConnect.Domain\EwuConnect.Domain.csproj", "{D9AF6282-957F-4350-B227-0A94002F529C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EwuConnect.Domain", "EwuConnect.Domain\EwuConnect.Domain.csproj", "{6F81283E-A5BF-4D48-A93D-A3BBFA2D7DFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,22 +17,10 @@ Global
 		{2135D503-81EF-443B-81CA-7647232450AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2135D503-81EF-443B-81CA-7647232450AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2135D503-81EF-443B-81CA-7647232450AF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35373716-8C99-4C8F-B295-986ACF9A7D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35373716-8C99-4C8F-B295-986ACF9A7D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35373716-8C99-4C8F-B295-986ACF9A7D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35373716-8C99-4C8F-B295-986ACF9A7D4B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0DDF286-F18A-4964-B21A-84097CEDEBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0DDF286-F18A-4964-B21A-84097CEDEBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0DDF286-F18A-4964-B21A-84097CEDEBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0DDF286-F18A-4964-B21A-84097CEDEBB0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46C37FBA-E725-436F-A7F7-EC7AE88B4420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46C37FBA-E725-436F-A7F7-EC7AE88B4420}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46C37FBA-E725-436F-A7F7-EC7AE88B4420}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46C37FBA-E725-436F-A7F7-EC7AE88B4420}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9AF6282-957F-4350-B227-0A94002F529C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9AF6282-957F-4350-B227-0A94002F529C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9AF6282-957F-4350-B227-0A94002F529C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9AF6282-957F-4350-B227-0A94002F529C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F81283E-A5BF-4D48-A93D-A3BBFA2D7DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F81283E-A5BF-4D48-A93D-A3BBFA2D7DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F81283E-A5BF-4D48-A93D-A3BBFA2D7DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F81283E-A5BF-4D48-A93D-A3BBFA2D7DFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

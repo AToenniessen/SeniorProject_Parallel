@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using EWUConnect.Domain.Models;
+using EwuConnect.Domain.Models.Forums;
+using EwuConnect.Domain.Models.Posts;
+using EwuConnect.Domain.Models.Replies;
+using EwuConnect.Domain.Models;
 
-namespace EWUConnect.Domain
+
+namespace EwuConnect.Domain
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

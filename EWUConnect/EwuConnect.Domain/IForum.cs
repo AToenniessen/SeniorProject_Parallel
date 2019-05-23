@@ -1,10 +1,11 @@
-﻿using EWUConnect.Data.Models;
+﻿using EwuConnect.Domain.Models.Forums;
+using EwuConnect.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EWUConnect.Data
+namespace EwuConnect.Domain
 {
 	public interface IForum
 	{

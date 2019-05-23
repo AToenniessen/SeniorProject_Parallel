@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EWUConnect.Data;
-using EWUConnect.Data.Models;
-using EWUConnectMVC.Models.Forum;
-using EWUConnectMVC.Models.Post;
+using EwuConnect.Domain;
+using EwuConnect.Domain.Models.Forums;
+using EwuConnect.Domain.Models.Posts;
+using EwuConnect.Domain.Models.Forums.ViewModels;
+using EwuConnect.Domain.Models.Posts.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EWUConnectMVC.Controllers
+namespace EwuConnect.MVC.Controllers
 {
     public class ForumController : Controller
     {

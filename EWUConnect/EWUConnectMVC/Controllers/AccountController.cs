@@ -10,11 +10,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using EWUConnect.Data.Models;
-using EWUConnect.Data.Models.AccountViewModels;
-using EWUConnectMVC.Services;
 
-namespace EWUConnectMVC.Controllers
+using EwuConnect.Domain.Models;
+using EwuConnect.Domain.Services;
+using EwuConnect.Domain.Models.AccountViewModels;
+
+namespace EwuConnect.MVC.Controllers
 {
 	[Authorize]
 	[Route("[controller]/[action]")]

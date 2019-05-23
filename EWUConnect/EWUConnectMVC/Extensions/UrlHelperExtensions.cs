@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EWUConnectMVC.Controllers;
+using EwuConnect.MVC.Controllers;
 
 namespace Microsoft.AspNetCore.Mvc
 {

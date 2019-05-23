@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EWUConnect.Domain.Models.AccountViewModels
+namespace EwuConnect.Domain.Models.AccountViewModels
 {
 	public class RegisterViewModel
 	{

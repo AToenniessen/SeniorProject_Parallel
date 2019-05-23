@@ -32,12 +32,13 @@ namespace EwuConnect.MVC.Controllers
 			if (ModelState.IsValid)
 			{
 
-				if (contact_service.sendMail(viewModel)){
-					return View(new ContactViewModel{ isSent = true });
-				}					
+				bool sent = contact_service.sendMail(viewModel);
+				ModelState.Clear();
+				return View(new ContactViewModel { isSent = sent });
+									
 			}
 			
-			return View();
+			return View(viewModel);
 		}
 	}
 }
