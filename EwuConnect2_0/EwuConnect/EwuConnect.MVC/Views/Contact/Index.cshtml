@@ -1,0 +1,111 @@
+﻿@model EwuConnect.Domain.Models.ContactViewModel.ContactViewModel
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<link href="css/contact.css" rel="stylesheet" type="text/css" />
+
+<form method="post" id="sendMailForm">
+	<div class="container1">
+		<div class="bootstrapGrid">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1>Contact Us</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<input asp-for="FirstName" placeholder="First Name" class="wide" style="min-width : 100%" />
+					<span asp-validation-for="FirstName" class="field-validation-valid text-danger"
+						  data-valmsg-replace="true">
+					</span>
+				</div>
+				<div class="col-sm-6">
+					<input asp-for="LastName" placeholder="Last Name" class="wide" style="min-width : 100%" />
+					<span asp-validation-for="LastName" class="field-validation-valid text-danger"
+						  data-valmsg-replace="true">
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<input asp-for="Email" placeholder="Email" class="wide" style="min-width : 100%" />
+					<span asp-validation-for="Email" class="field-validation-valid text-danger"
+						  data-valmsg-replace="true">
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<TextArea asp-for="Comment" placeholder="Message" rows="10" style="min-width : 100%"></TextArea>
+					<span asp-validation-for="Comment" class="field-validation-valid text-danger"
+						  data-valmsg-replace="true">
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				@if (Model != null && Model.isSent)
+				{
+					@Html.Partial("_SuccessValidation");
+				}
+				else
+				{
+					@Html.Partial("_ErrorValidation");
+				}
+
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="float-right">
+						<button type="submit" id="submitContactBtn" class="btn btn-primary btn-lg">
+							Submit
+						</button>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="float-left">
+						<a asp-page="/Home/Mentor" class="btn btn-info btn-lg">Become a Mentor</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<asp:RequiredFieldValidator ID="RequiredName" runat="server"
+												ControlToValidate="FirstName" ValidationGroup="comment" enableclientscript="false" />
+
+					<asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidatorName"
+													SetFocusOnError="true" ControlToValidate="FirstName"
+													ValidationExpression="^[A-z\-']{1,50}$" Display="Dynamic"
+													ValidationGroup="comment" />
+
+					<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+												ControlToValidate="LastName" ValidationGroup="comment" enableclientscript="false" />
+
+					<asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator1"
+													SetFocusOnError="true" ControlToValidate="LastName"
+													ValidationExpression="^[A-z\-']{1,50}$" Display="Dynamic"
+													ValidationGroup="comment" />
+
+
+					<asp:RequiredFieldValidator ID="RequiredEmail" runat="server"
+												ControlToValidate="Email" ValidationGroup="comment" enableclientscript="false" />
+
+					<asp:RegularExpressionValidator runat="server" ID="ExpressionValidatorEmail"
+													SetFocusOnError="true" ControlToValidate="Email"
+													ValidationExpression="\w+([-+.']\w+)*@@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
+													ValidationGroup="comment" />
+
+
+					<asp:RequiredFieldValidator ID="RequiredComment" runat="server"
+												ControlToValidate="Comments" ValidationGroup="comment" enableclientscript="false" />
+
+					<asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidatorComments"
+													SetFocusOnError="true" ControlToValidate="Comments"
+													ValidationExpression="(\w*\s*[!?\.'-]*)*" Display="Dynamic"
+													ValidationGroup="comment" />
+				</div>
+			</div>
+
+		</div>
+	</div>
+</form>
+
