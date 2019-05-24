@@ -47,11 +47,11 @@
 				{
 					if (Model.isSent)
 					{
-						@Html.Partial("_SuccessValidation");
+						@await Html.PartialAsync("_SuccessValidation");
 					}
 					else
 					{
-						@Html.Partial("_ErrorValidation");
+						@await Html.PartialAsync("_ErrorValidation");
 					}
 				}
 

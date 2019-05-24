@@ -1,6 +1,6 @@
 using System;
 
-namespace EwuConnect.Domain.Models
+namespace EwuConnect.MVC.Models
 {
     public class ErrorViewModel
     {

@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using EwuConnect.Domain.Models;
+using EwuConnect.MVC.Models;
 
 namespace EwuConnect.MVC.Controllers
 {

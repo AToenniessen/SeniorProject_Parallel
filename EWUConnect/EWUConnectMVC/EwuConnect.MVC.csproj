@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <UserSecretsId>aspnet-EWUConnectMVC-8EE47A33-A8D4-434C-AE7B-5F722BDA635C</UserSecretsId>
+    <UserSecretsId>aspnet-EwuConnect.MVC-8EE47A33-A8D4-434C-AE7B-5F722BDA635C</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
