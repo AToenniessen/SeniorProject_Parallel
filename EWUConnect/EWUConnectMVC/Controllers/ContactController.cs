@@ -12,15 +12,15 @@ namespace EwuConnect.MVC.Controllers
 {
 	public class ContactController : Controller
 	{
-		private readonly IContact contact_service;
+		private readonly IEmailSender email_service;
 
-		public ContactController(IContact contactService)
+		public ContactController(IEmailSender emailService)
 		{
-			contact_service = contactService;
+			email_service = emailService;
 		}
 
 
-	[HttpGet]
+		[HttpGet]
 		public IActionResult Index()
 		{
 			return View(new ContactViewModel());
@@ -30,8 +30,13 @@ namespace EwuConnect.MVC.Controllers
 		{
 			if (ModelState.IsValid)
 			{
+				var subject = "EWU CONNECT - GENERAL QUESTION";
 
-				bool sent = contact_service.sendMail(viewModel);
+				string body = "<b>From:</b> " + viewModel.FirstName + " " + viewModel.LastName + "<br /><br />";
+				body += "<b>Email:</b> " + viewModel.Email + "<br /><br />";
+				body += "<b>Question:</b> <br />" + viewModel.Comment;
+
+				bool sent = email_service.SendEmailAsync(viewModel.Email, subject, body).Result;
 				ModelState.Clear();
 				return View(new ContactViewModel { isSent = sent });
 									

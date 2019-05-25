@@ -12,7 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 using EwuConnect.Domain.Models;
-using EwuConnect.Domain.Services;
+using EwuConnect.Domain;
+using EwuConnect.MVC.Extensions;
 using EwuConnect.Domain.Models.AccountViewModels;
 
 namespace EwuConnect.MVC.Controllers
@@ -373,7 +374,7 @@ namespace EwuConnect.MVC.Controllers
 				var code = await _userManager.GeneratePasswordResetTokenAsync(user);
 				var callbackUrl = Url.ResetPasswordCallbackLink(user.Id, code, Request.Scheme);
 				await _emailSender.SendEmailAsync(model.Email, "Reset Password",
-				   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
+				   $"Please reset your password by clicking <a href='{callbackUrl}'>here</a>");
 				return RedirectToAction(nameof(ForgotPasswordConfirmation));
 			}
 

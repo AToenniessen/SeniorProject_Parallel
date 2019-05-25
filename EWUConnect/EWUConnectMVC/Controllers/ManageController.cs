@@ -12,10 +12,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 using EwuConnect.Domain.Models;
-using EwuConnect.Domain.Services;
+using EwuConnect.Domain;
+using EwuConnect.MVC.Extensions;
 using EwuConnect.Domain.Models.ManageViewModels;
 
-namespace EWUConnectMVC.Controllers
+namespace EwuConnect.MVC.Controllers
 {
 	[Authorize]
 	[Route("[controller]/[action]")]

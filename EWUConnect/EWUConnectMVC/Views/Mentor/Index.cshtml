@@ -1,0 +1,120 @@
+﻿@model  EwuConnect.Domain.Models.MentorViewModel.MentorViewModel
+@{
+    ViewData["Title"] = "Mentor";
+}
+
+	<asp:Content ID="Content2" ContentPlaceHolderID="LandingPage" runat="server">
+		<link href="css/contact.css" rel="stylesheet" type="text/css" />
+
+
+		<form method="post" id="becomeMentor">
+			<div class="container1">
+				<div class="bootstrapGrid">
+
+					<div class="row">
+						<div class="col-sm-12">
+							<h1>Become a Mentor</h1>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-6">
+							<input asp-for="FirstName" placeholder="First Name" class="wide" style="min-width : 100%" />
+							<span asp-validation-for="FirstName" style="font-size:.75vw;" class="field-validation-valid text-danger"
+								  data-valmsg-replace="true">
+							</span>
+						</div>
+						<div class="col-sm-6">
+							<input asp-for="LastName" placeholder="Last Name" class="wide" style="min-width : 100%" />
+							<span asp-validation-for="LastName" style="font-size:.75vw;" class="field-validation-valid text-danger"
+								  data-valmsg-replace="true">
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<input asp-for="Email" placeholder="Email" class="wide" style="min-width : 100%" />
+							<span asp-validation-for="Email" style="font-size:.75vw;" class="field-validation-valid text-danger"
+									data-valmsg-replace="true">
+							</span>
+						</div>
+						<div class="col-sm-2">
+							<input asp-for="AreaCode" placeholder="(555)" class="wide" style="min-width : 100%" />
+							<span asp-validation-for="AreaCode" style="font-size:.75vw;" class="field-validation-valid text-danger" 
+								  data-valmsg-replace="true">
+							</span>
+						</div>
+						<div class="col-sm-2">
+							<input asp-for="FirstPhone" placeholder="555" class="wide" style="min-width : 100%" />
+							<span asp-validation-for="FirstPhone" style="font-size:.75vw;" class="field-validation-valid text-danger"
+								  data-valmsg-replace="true">
+							</span>
+						</div>
+						<div class="col-sm-2">
+							<input asp-for="LastPhone" placeholder="5555" class="wide" style="min-width : 100%" />
+							<span asp-validation-for="LastPhone" style="font-size:.75vw;" class="field-validation-valid text-danger"
+								  data-valmsg-replace="true">
+							</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<input asp-for="Association" placeholder="Company/University" class="wide" style="min-width : 100%" />
+							<span asp-validation-for="Association" style="font-size:.75vw;" class="field-validation-valid text-danger"
+								  data-valmsg-replace="true">
+							</span>
+						</div>
+						<div class="col-sm-3">
+							<input asp-for="Major" placeholder="Major" class="wide" style="min-width : 100%" />
+							<span asp-validation-for="Major" style="font-size:.75vw;" class="field-validation-valid text-danger col-sm-3"
+								  data-valmsg-replace="true">
+							</span>
+						</div>
+						<div class="col-sm-3">
+							<input asp-for="Graduated" placeholder="Graduation Date" class="wide" style="min-width : 100%" />
+							<span asp-validation-for="Graduated" style="font-size:.75vw;" class="field-validation-valid text-danger col-sm-3"
+								  data-valmsg-replace="true">
+							</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<TextArea asp-for="Comment" placeholder="Message" rows="10" style="min-width : 100%"></TextArea>
+							<span asp-validation-for="Comment" style="font-size:.75vw;" class="field-validation-valid text-danger"
+								  data-valmsg-replace="true">
+							</span>
+						</div>
+					</div>
+					<div class="col-sm-6">
+					</div>
+					<div class="col-sm-6">
+					</div>
+
+					<div class="row">
+						@if (Model != null)
+						{
+							if (Model.isSent)
+							{
+								@await Html.PartialAsync("_SuccessValidation");
+							}
+							else if (Model.FirstName != null && Model.LastName != null && Model.Email != null && Model.Comment != null)
+							{
+								@await Html.PartialAsync("_ErrorValidation");
+							}
+						}
+
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<button type="submit" id="submitContactBtn" class="btn btn-primary btn-lg">
+								Submit
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</asp:Content>
+

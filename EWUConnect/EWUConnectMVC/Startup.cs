@@ -45,7 +45,7 @@ namespace EwuConnect.MVC
 
 			services.AddScoped<IForum, ForumService>();
 			services.AddScoped<IPost, PostService>();
-			services.AddScoped<IContact, ContactService>();
+			services.AddScoped<IEmailSender, EmailSender>();
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 		}

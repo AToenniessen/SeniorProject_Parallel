@@ -1,6 +1,9 @@
 ﻿div.container1 {
     max-width: 768px;
 }
+validate{
+	font-size: 25%
+}
 .wide {
 	width: 100%;
 }
