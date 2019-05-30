@@ -1,0 +1,72 @@
+﻿@model EwuConnect.Domain.Models.ContactViewModel.ContactViewModel
+
+
+<link href="/css/contact.css" rel="stylesheet" type="text/css" />
+
+<form method="post" id="sendMailForm">
+	<div class="container1">
+		<div class="bootstrapGrid">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1>Contact Us</h1>
+				</div>
+			</div>
+			<div class="row">
+                <div class="col-sm-6">
+                    <input asp-for="FirstName" placeholder="First Name" class="userInput" />
+                    <span asp-validation-for="FirstName" class="inputValidator text-danger" data-valmsg-replace="true"></span>
+                    
+                </div>
+				<div class="col-sm-6">
+					<input asp-for="LastName" placeholder="Last Name" class="userInput"/>
+                    <span asp-validation-for="LastName" class="inputValidator text-danger" data-valmsg-replace="true"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<input asp-for="Email" placeholder="Email" class="userInput"/>
+                    <span asp-validation-for="Email" class="inputValidator text-danger" data-valmsg-replace="true"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<TextArea asp-for="Comment" placeholder="Message" rows="10" class="userInput"></TextArea>
+                    <span asp-validation-for="Comment" class="inputValidator text-danger" data-valmsg-replace="true"></span>
+				</div>
+			</div>
+
+			<div class="row">
+				@if (Model != null)
+				{
+					if (Model.isSent)
+					{
+						@await Html.PartialAsync("_SuccessValidation");
+					}
+					else if(Model.FirstName != null && Model.LastName != null && Model.Email != null && Model.Comment != null)
+					{
+						@await Html.PartialAsync("_ErrorValidation");
+					}
+				}
+
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="float-right">
+						<button type="submit" id="submitContactBtn" class="btn btn-primary btn-lg">
+							Submit
+						</button>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="float-left">
+						<a asp-controller="Mentor" asp-action="BecomeMentor" class="btn btn-info btn-lg">Become a Mentor</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+

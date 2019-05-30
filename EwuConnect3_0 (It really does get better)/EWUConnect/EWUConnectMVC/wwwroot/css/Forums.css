@@ -1,0 +1,71 @@
+﻿body{
+}
+
+.sectionHeader{
+	background-color: rgba(0,0,0,0.9);
+	padding: 8px 0 24px 24px;
+}
+
+.sectionHeading{
+	color: white;
+	font-size: 1.3em;
+	font-family: 'Roboto';
+	padding: 16px 0 16px 0;
+	border-bottom: 1px solid #335;
+	margin-bottom: 12px;
+}
+
+.postIndexTitle{
+	font-size: 1.4em;
+	text-align: center;
+}
+
+.postHeading {
+	color: white;
+	font-size: 1.1em;
+	font-family: 'Roboto';
+	padding: 16px 0 16px 0;
+}
+
+.postData{
+	display: inline-block;
+}
+.postDate{
+	color: #888;
+	font-family: 'Roboto Mono';
+	font-size: 0.8em;
+}
+
+.sectionInfo{
+	height: 400px;
+	background-color: white;
+}
+
+.postContentContainer{
+	font-family: 'Roboto';
+	color: #222;
+	padding: 22px;
+	border-left: 1px solid #ddd;
+}
+
+#postIndexContent{
+	background-color:white;
+	box-shadow:0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.3);
+}
+
+.postHeader{
+	background-color: #212121;
+	padding: 8px 0px 24px 24px;
+}
+
+.btn-back{
+	background-color: #555;
+	color: #fff !important;
+	transition: ease-in 0.1s;
+	border-radius: 0px !important;
+}
+
+.btn-back:hover{
+	transition: ease-in 0.1s;
+	background-color: #1E88E5 !important;
+}

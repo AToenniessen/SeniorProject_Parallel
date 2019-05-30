@@ -1,0 +1,11 @@
+﻿div.container1 {
+    max-width: 768px;
+}
+
+.userInput {
+	width: 100%;
+}
+
+.inputValidator {
+    font-size: 70%;
+}

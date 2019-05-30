@@ -1,0 +1,76 @@
+﻿@model  EwuConnect.Domain.Models.Forums.ViewModels.ForumTopicModel
+
+
+<div class="container">
+	<div class="bootstrapGrid">
+		@*
+		<div class="col-md-12">
+			<span>@Model.Forum.Name Forum</span>
+			@if (Context.User.Identity.IsAuthenticated)
+			{
+				<a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id" class="btn btn-newPost">
+					Create Post
+				</a>
+			}
+			<form asp-controller="Forum" asp-action="Search" method="post">
+				<div>
+					<input asp-for="SearchQuery" type="text" placeholder="Search..." onfocus="clearThis(this)" />
+					<button type="submit" class="btn">search</button>
+				</div>
+				<input asp-for="Forum.Id" name="id" type="hidden" />
+			</form>
+		</div>
+		<div>
+			<p>W</p>
+		</div>
+		*@
+		@if (Model.Posts.Any())
+		{
+			<table class="table table-bordered table-hover">
+				<tbody>
+					@foreach (var post in Model.Posts)
+					{
+						<tr>
+							<td>
+								<a asp-controller="Post" asp-action="Posts" asp-route-id="@post.Id">
+									@post.Title
+								</a>
+							</td>
+							<td>
+								@post.Author
+							</td>
+							<td>
+								@post.DatePosted
+							</td>
+							<td>
+								@post.RepliesCount
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+		else
+		{
+			<div class="noPosts">
+				<h3>
+					It looks like there are no @Model.Forum.Name posts yet.<br />
+					Why not
+					<a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Forum.Id">
+						<span>create</span>
+					</a>
+					one?
+				</h3>
+			</div>
+		}
+	</div>
+</div>
+@*
+@section  Scripts{
+	<script>
+	function clearThis(target) {
+		target.value = "";
+	}
+	</script>
+ }
+*@

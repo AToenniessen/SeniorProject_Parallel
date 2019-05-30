@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using EwuConnect.Domain.Models
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+	ViewData["Title"] = "EWU Connect";
+}
+
+<asp:Content ID="LandingPage" ContentPlaceHolderID="LandingPage" class="masthead body">
+	<link rel="stylesheet" href="/css/index.css" type="text/css" media="screen" />
+
+	<div class="container1">
+		<div class="bootstrapGrid">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 style="font-size: 200%">
+						EWU Connect
+					</h1>
+				</div>
+				<div class="col-sm-12">
+					<h4>Connecting Real World Skill With Tomorrows Leaders</h4>
+				</div>
+			</div>
+			<div class="row buttons">
+
+				@if (!SignInManager.IsSignedIn(User))
+				{
+					<div class="col-sm-6">
+						<div class="float-right">
+							<a asp-controller="Mentor" asp-action="BecomeMentor" class="btn btn-info btn-lg">Become a Mentor</a>
+
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="float-left">
+							<a asp-controller="Account" asp-action="Login" class="btn btn-danger btn-lg" Style="background-color: #a10022">EWU SSO Login</a>
+						</div>
+					</div>
+				}
+				else
+				{
+					<div class="col-sm-12">
+						<div>
+							<a asp-controller="Mentor" asp-action="BecomeMentor" class="btn btn-info btn-lg">Become a Mentor</a>
+
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</asp:Content>
+
+
+

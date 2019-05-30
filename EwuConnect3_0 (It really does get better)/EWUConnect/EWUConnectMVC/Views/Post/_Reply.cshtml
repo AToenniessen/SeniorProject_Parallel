@@ -1,0 +1,13 @@
+﻿@model  EwuConnect.Domain.Models.Replies.ViewModels.PostReplyModel
+
+	
+	<form asp-action="AddReply" method="post" id="addPostReplyForm">
+		<div class="form-group">
+			<label asp-for="ReplyContent"></label>
+			<textarea asp-for="ReplyContent" class="form-control"></textarea>
+		</div>
+		<button type="submit" id="submitPostBtn" class="btn btn-submitPost">
+			Submit Reply
+		</button>
+		<input asp-for="PostId" type="hidden" />
+	</form>
